@@ -9,7 +9,7 @@ const initialUserInput = {
 ///  inital wartosci sa wyniesione do zewnetrznej zmiennej, bo chcemy je uzyc dwa razy, raz w useState, a raz w resecie zeby przywrocic wartosci domyslne
 /// dodatkowo to jest calkowicie poza naszym komonentem tj. nad Form bo nie potrzebujemy tego za kazdym renderowaniem
 
-function Form() {
+function Form(props) {
 	const [userInput, setUserInput] = useState(initialUserInput);
 
 	const resetHandler = () => {
@@ -20,6 +20,8 @@ function Form() {
 	const submitHandler = (e) => {
 		e.preventDefault();
 		console.log("SUBMIT");
+
+		props.onCalculate(userInput);
 	};
 
 	const inputHandler = (input, value) => {
