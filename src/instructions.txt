@@ -1,0 +1,23 @@
+1. pierwszy commit
+    podziel aplikacje na komponenty, min 3
+
+
+2. drugi commit
+    handling 
+        a) submit button ( klikniecie ma drukowac w konsoli "submit)
+        b) reset button    (klikniecie ma drukowac w konsoli "reset")
+        c) inputs (jedna funkcja dla wielu inputow) (wpisanie cokolwikek w jakikolwiek input ma drukowac w konsoli nazwe inputa i aktualna wartosc)
+
+
+
+
+
+///// wskazowki /////
+    przycisk calculate traktujemy jako submit, 
+
+    jako ze button submit ma type="submit" i jest w form, to nie dajemy na niego onclicka, tylko w zanczniku form dajemy onSubmit i tam przekazujemy funkcje
+    jesli przyciski nam przelasowuje strone to mousimy cos z tym zrobic
+
+    jak tworzymy handler dla inpotow to musimy wiedziec co klikamy i jaka jest wartosc tego input (zeby wiedziec jaka jest wartosc danego inputa to nie wymyslamy na sile tylko najlepije jak kazdy input ma jakies iniukatowe id i to nim musimy sie posluzyc), jesli do onChange chcemy przekazac funkcje ktora ma jakies argimenty
+    to nie mozemy dac costam(a,b) bo nam ta funkcje odrazu wywola, lepiej arrow function ()=>{ i dopiero tu costam(a,b)} i jak klikniemy w input to on chamge wywola funkcje
+    strzalkowa a ona costam(a,b), bo jak by byla tylko w onChange funkcja costam(a,b) to nawiasy () sprawiaja ze funkcja od razu sie wykona, w funkcji strzalkowej () nie sprawiaja ze sie wykona bo to czesc skaldni funkcji 
