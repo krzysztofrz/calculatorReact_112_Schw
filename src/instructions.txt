@@ -21,3 +21,50 @@
     jak tworzymy handler dla inpotow to musimy wiedziec co klikamy i jaka jest wartosc tego input (zeby wiedziec jaka jest wartosc danego inputa to nie wymyslamy na sile tylko najlepije jak kazdy input ma jakies iniukatowe id i to nim musimy sie posluzyc), jesli do onChange chcemy przekazac funkcje ktora ma jakies argimenty
     to nie mozemy dac costam(a,b) bo nam ta funkcje odrazu wywola, lepiej arrow function ()=>{ i dopiero tu costam(a,b)} i jak klikniemy w input to on chamge wywola funkcje
     strzalkowa a ona costam(a,b), bo jak by byla tylko w onChange funkcja costam(a,b) to nawiasy () sprawiaja ze funkcja od razu sie wykona, w funkcji strzalkowej () nie sprawiaja ze sie wykona bo to czesc skaldni funkcji 
+
+    wszystkie 3 funkcje musza sie nazywac cos ala  
+    submitHandler
+    resetHandler
+    inputChangeHandler 
+    
+
+
+    3. trzeci commit
+
+    managing state
+    uzyj stanu dla inputow, wstaw do kazdego inputa wartosci poczatkowe
+    jesli zmienimy jakies wartosci w inpucie na stronie, to klikajac na reset button chcemy zeby zawartosc inputow powrocila do wartosci domyslnych (poczatkowych, ktore ustawilismy wczesniej)
+    
+
+
+    ////// wskazowki //////
+musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState z roznymi kliuczami dla kazdego inputa
+uzyjemy jednego useState z obiektem w srodku dla wszystkich inputow
+
+const [userInput, setUserInput] = useState ({      // userInput to nazwa zmiennej, a setUserInput to nazwa funkcji do aktualizacji userInput
+    'current-savings': 10000,
+    'yearly -contribution': 1200,
+    'expected-return': 7,
+     duration: 10.
+})
+
+dlaczego ta ostatnia duration jest bez cudzyslowiow? moze byc tez z i zadziala, chodzi o to ze jak mamy w id nazwe dwu-czlonowa to musimy w tym obiekcie dac w cudzyslowiu
+
+powinnismy przeniesc nasze stworzone wartosci do zewnetrznej zmiennej nad componentem zeby nie kopiowac danych tylko poslugiwac sie zmienna  czyli w useState(nazwazmiennej zawierajacej wartosci poczatkowe)
+
+
+jak tego uzyc w inputChangeHandler?
+const inputChangeHandler = (input, value) =>{
+    setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli w tym przypadku poczatkowa wartosc (ale jak by byl counter to mialob by wieksze znaczenie)
+        return {                /// zwracamuy obiekt
+            ...prevInput        /// kopiujemy stan poprzedni dzieki spread operator   to nam robi dokladnie kopie prevInput
+            [input]:value       /// jako ze mamy kilka inputow to chcemy w dynamiczny sposob uzyskac dostep do nazwy inputa i ustawic mu value jakie jest w inpucie 
+                                    wiec tu w [inut] zostanie podstawione to co jest w aktualnym inpucie czyli odpowiednie id i do niego bedzie przypisana value
+        }
+    })
+}
+
+
+jak np mamy input jakis tam to musimy w nim dodac 
+value ={userInput["jego-id"]}    /// userInput to nazwa zmiennej w useStete ktory stworzylismy
+i tak dla kazdego inputu
