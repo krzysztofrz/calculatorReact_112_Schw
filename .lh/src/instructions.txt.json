@@ -1,0 +1,126 @@
+{
+    "sourceFile": "src/instructions.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 27,
+            "patches": [
+                {
+                    "date": 1691316083667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1691316110390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,11 @@\n \n     3 commmit\n \n     managing state\n+\n+\n+\n+    ////// wskazowki //////\n     \n \n+\n"
+                },
+                {
+                    "date": 1691316178752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,11 +30,12 @@\n \n     3 commmit\n \n     managing state\n+    musimy uzyc useState dla kazdego inputa\n \n \n \n     ////// wskazowki //////\n-    \n \n \n+\n"
+                },
+                {
+                    "date": 1691316236787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,12 +30,12 @@\n \n     3 commmit\n \n     managing state\n-    musimy uzyc useState dla kazdego inputa\n+    uzyj stanu dla inputow \n \n \n \n     ////// wskazowki //////\n+musimy uzyc useState dla kazdego inputa\n \n \n-\n"
+                },
+                {
+                    "date": 1691316274498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,7 @@\n \n \n \n     ////// wskazowki //////\n-musimy uzyc useState dla kazdego inputa\n+musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState\n \n \n"
+                },
+                {
+                    "date": 1691316309597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,8 @@\n \n \n \n     ////// wskazowki //////\n-musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState\n+musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState z roznymi kliuczami dla kazdego inputa\n \n \n+\n"
+                },
+                {
+                    "date": 1691316354469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,7 +36,8 @@\n \n \n     ////// wskazowki //////\n musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState z roznymi kliuczami dla kazdego inputa\n+uzyjemy jednego useState z obiektem w srodku dla wszystkich inputow\n \n \n \n"
+                },
+                {
+                    "date": 1691316654162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,11 @@\n     resetHandler\n     inputChangeHandler \n     \n \n-    3 commmit\n \n+    3. trzeci commit\n+\n     managing state\n     uzyj stanu dla inputow \n \n \n"
+                },
+                {
+                    "date": 1691316674084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n     3. trzeci commit\n \n     managing state\n-    uzyj stanu dla inputow \n+    uzyj stanu dla inputow, wstaw do kazdego inputa wartosci poczatkowe\n \n \n \n     ////// wskazowki //////\n"
+                },
+                {
+                    "date": 1691316997741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n     3. trzeci commit\n \n     managing state\n     uzyj stanu dla inputow, wstaw do kazdego inputa wartosci poczatkowe\n+    jesli zmienimy jakies wartosci w inpucie na stronie, to klikajac na reset button chcemy zeby zawartosc inputow powrocila do wartosci domyslnych (poczatkowych, ktore ustawilismy wczesniej)\n \n \n \n     ////// wskazowki //////\n"
+                },
+                {
+                    "date": 1691317075319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,13 +33,15 @@\n \n     managing state\n     uzyj stanu dla inputow, wstaw do kazdego inputa wartosci poczatkowe\n     jesli zmienimy jakies wartosci w inpucie na stronie, to klikajac na reset button chcemy zeby zawartosc inputow powrocila do wartosci domyslnych (poczatkowych, ktore ustawilismy wczesniej)\n+    \n \n \n-\n     ////// wskazowki //////\n musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState z roznymi kliuczami dla kazdego inputa\n uzyjemy jednego useState z obiektem w srodku dla wszystkich inputow\n \n+powinnismy przeniesc nasze stworzone wartosci do zewnetrznej zmiennej nad componentem zeby nie kopiowac danych tylko poslugiwac sie zmienna\n \n \n+\n"
+                },
+                {
+                    "date": 1691317229113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,17 @@\n     ////// wskazowki //////\n musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState z roznymi kliuczami dla kazdego inputa\n uzyjemy jednego useState z obiektem w srodku dla wszystkich inputow\n \n+const [userInput, setUserInput] = useState ({\n+    'current-savings': 10000,\n+    'yearly -contribution': 1200,\n+    'expected-return': 7,\n+     duration: 10.\n+})\n+\n+dlaczego ta ostatnia duration jest bez cudzyslowiow? moze byc tez z i zadziala, chodzi o to ze jak mamy w id nazwe dwu-czlonowa to musimy w tym obiekcie dac w cudzyslowiu\n+\n powinnismy przeniesc nasze stworzone wartosci do zewnetrznej zmiennej nad componentem zeby nie kopiowac danych tylko poslugiwac sie zmienna\n \n \n \n"
+                },
+                {
+                    "date": 1691317278690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     ////// wskazowki //////\n musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState z roznymi kliuczami dla kazdego inputa\n uzyjemy jednego useState z obiektem w srodku dla wszystkich inputow\n \n-const [userInput, setUserInput] = useState ({\n+const [userInput, setUserInput] = useState ({      // userInput to nazwa zmiennej, a setUserInput to nazwa funkcji do aktualizacji userInput\n     'current-savings': 10000,\n     'yearly -contribution': 1200,\n     'expected-return': 7,\n      duration: 10.\n"
+                },
+                {
+                    "date": 1691317416918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,5 +52,10 @@\n \n powinnismy przeniesc nasze stworzone wartosci do zewnetrznej zmiennej nad componentem zeby nie kopiowac danych tylko poslugiwac sie zmienna\n \n \n+jak tego uzyc w inputChangeHandler?\n+const inputChangeHandler = (input, value) =>{\n+    setUserInput\n+}\n \n+\n"
+                },
+                {
+                    "date": 1691317441124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,63 @@\n+1. pierwszy commit\n+    podziel aplikacje na komponenty, min 3\n+\n+\n+2. drugi commit\n+    handling \n+        a) submit button ( klikniecie ma drukowac w konsoli \"submit)\n+        b) reset button    (klikniecie ma drukowac w konsoli \"reset\")\n+        c) inputs (jedna funkcja dla wielu inputow) (wpisanie cokolwikek w jakikolwiek input ma drukowac w konsoli nazwe inputa i aktualna wartosc)\n+\n+\n+\n+\n+\n+///// wskazowki /////\n+    przycisk calculate traktujemy jako submit, \n+\n+    jako ze button submit ma type=\"submit\" i jest w form, to nie dajemy na niego onclicka, tylko w zanczniku form dajemy onSubmit i tam przekazujemy funkcje\n+    jesli przyciski nam przelasowuje strone to mousimy cos z tym zrobic\n+\n+    jak tworzymy handler dla inpotow to musimy wiedziec co klikamy i jaka jest wartosc tego input (zeby wiedziec jaka jest wartosc danego inputa to nie wymyslamy na sile tylko najlepije jak kazdy input ma jakies iniukatowe id i to nim musimy sie posluzyc), jesli do onChange chcemy przekazac funkcje ktora ma jakies argimenty\n+    to nie mozemy dac costam(a,b) bo nam ta funkcje odrazu wywola, lepiej arrow function ()=>{ i dopiero tu costam(a,b)} i jak klikniemy w input to on chamge wywola funkcje\n+    strzalkowa a ona costam(a,b), bo jak by byla tylko w onChange funkcja costam(a,b) to nawiasy () sprawiaja ze funkcja od razu sie wykona, w funkcji strzalkowej () nie sprawiaja ze sie wykona bo to czesc skaldni funkcji \n+\n+    wszystkie 3 funkcje musza sie nazywac cos ala  \n+    submitHandler\n+    resetHandler\n+    inputChangeHandler \n+    \n+\n+\n+    3. trzeci commit\n+\n+    managing state\n+    uzyj stanu dla inputow, wstaw do kazdego inputa wartosci poczatkowe\n+    jesli zmienimy jakies wartosci w inpucie na stronie, to klikajac na reset button chcemy zeby zawartosc inputow powrocila do wartosci domyslnych (poczatkowych, ktore ustawilismy wczesniej)\n+    \n+\n+\n+    ////// wskazowki //////\n+musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState z roznymi kliuczami dla kazdego inputa\n+uzyjemy jednego useState z obiektem w srodku dla wszystkich inputow\n+\n+const [userInput, setUserInput] = useState ({      // userInput to nazwa zmiennej, a setUserInput to nazwa funkcji do aktualizacji userInput\n+    'current-savings': 10000,\n+    'yearly -contribution': 1200,\n+    'expected-return': 7,\n+     duration: 10.\n+})\n+\n+dlaczego ta ostatnia duration jest bez cudzyslowiow? moze byc tez z i zadziala, chodzi o to ze jak mamy w id nazwe dwu-czlonowa to musimy w tym obiekcie dac w cudzyslowiu\n+\n+powinnismy przeniesc nasze stworzone wartosci do zewnetrznej zmiennej nad componentem zeby nie kopiowac danych tylko poslugiwac sie zmienna\n+\n+\n+jak tego uzyc w inputChangeHandler?\n+const inputChangeHandler = (input, value) =>{\n+    setUserInput({\n+        \n+    })\n+}\n+\n+\n"
+                },
+                {
+                    "date": 1691317560136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,10 +54,13 @@\n \n \n jak tego uzyc w inputChangeHandler?\n const inputChangeHandler = (input, value) =>{\n-    setUserInput({\n-        \n+    setUserInput( (prevInput) =>{\n+        return {\n+            ...prevInput\n+            [input]:value\n+        }\n     })\n }\n \n \n"
+                },
+                {
+                    "date": 1691317612115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,74 +54,13 @@\n \n \n jak tego uzyc w inputChangeHandler?\n const inputChangeHandler = (input, value) =>{\n-    setUserInput( (prevInput) =>{\n+    setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli \n         return {\n             ...prevInput\n             [input]:value\n         }\n     })\n }\n \n \n-1. pierwszy commit\n-    podziel aplikacje na komponenty, min 3\n-\n-\n-2. drugi commit\n-    handling \n-        a) submit button ( klikniecie ma drukowac w konsoli \"submit)\n-        b) reset button    (klikniecie ma drukowac w konsoli \"reset\")\n-        c) inputs (jedna funkcja dla wielu inputow) (wpisanie cokolwikek w jakikolwiek input ma drukowac w konsoli nazwe inputa i aktualna wartosc)\n-\n-\n-\n-\n-\n-///// wskazowki /////\n-    przycisk calculate traktujemy jako submit, \n-\n-    jako ze button submit ma type=\"submit\" i jest w form, to nie dajemy na niego onclicka, tylko w zanczniku form dajemy onSubmit i tam przekazujemy funkcje\n-    jesli przyciski nam przelasowuje strone to mousimy cos z tym zrobic\n-\n-    jak tworzymy handler dla inpotow to musimy wiedziec co klikamy i jaka jest wartosc tego input (zeby wiedziec jaka jest wartosc danego inputa to nie wymyslamy na sile tylko najlepije jak kazdy input ma jakies iniukatowe id i to nim musimy sie posluzyc), jesli do onChange chcemy przekazac funkcje ktora ma jakies argimenty\n-    to nie mozemy dac costam(a,b) bo nam ta funkcje odrazu wywola, lepiej arrow function ()=>{ i dopiero tu costam(a,b)} i jak klikniemy w input to on chamge wywola funkcje\n-    strzalkowa a ona costam(a,b), bo jak by byla tylko w onChange funkcja costam(a,b) to nawiasy () sprawiaja ze funkcja od razu sie wykona, w funkcji strzalkowej () nie sprawiaja ze sie wykona bo to czesc skaldni funkcji \n-\n-    wszystkie 3 funkcje musza sie nazywac cos ala  \n-    submitHandler\n-    resetHandler\n-    inputChangeHandler \n-    \n-\n-\n-    3. trzeci commit\n-\n-    managing state\n-    uzyj stanu dla inputow, wstaw do kazdego inputa wartosci poczatkowe\n-    jesli zmienimy jakies wartosci w inpucie na stronie, to klikajac na reset button chcemy zeby zawartosc inputow powrocila do wartosci domyslnych (poczatkowych, ktore ustawilismy wczesniej)\n-    \n-\n-\n-    ////// wskazowki //////\n-musimy uzyc useState dla kazdego inputa, mozemy uzyc osobnego useState dla kazdego inputa albo uzyc jedengo useState z roznymi kliuczami dla kazdego inputa\n-uzyjemy jednego useState z obiektem w srodku dla wszystkich inputow\n-\n-const [userInput, setUserInput] = useState ({      // userInput to nazwa zmiennej, a setUserInput to nazwa funkcji do aktualizacji userInput\n-    'current-savings': 10000,\n-    'yearly -contribution': 1200,\n-    'expected-return': 7,\n-     duration: 10.\n-})\n-\n-dlaczego ta ostatnia duration jest bez cudzyslowiow? moze byc tez z i zadziala, chodzi o to ze jak mamy w id nazwe dwu-czlonowa to musimy w tym obiekcie dac w cudzyslowiu\n-\n-powinnismy przeniesc nasze stworzone wartosci do zewnetrznej zmiennej nad componentem zeby nie kopiowac danych tylko poslugiwac sie zmienna\n-\n-\n-jak tego uzyc w inputChangeHandler?\n-const inputChangeHandler = (input, value) =>{\n-    setUserInput\n-}\n-\n-\n"
+                },
+                {
+                    "date": 1691317641860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n \n \n jak tego uzyc w inputChangeHandler?\n const inputChangeHandler = (input, value) =>{\n-    setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli \n+    setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli w tym przypadku poczatkowa wartosc (ale jak by byl counter to mialob by wieksze znaczenie)\n         return {\n             ...prevInput\n             [input]:value\n         }\n"
+                },
+                {
+                    "date": 1691317672441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n \n jak tego uzyc w inputChangeHandler?\n const inputChangeHandler = (input, value) =>{\n     setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli w tym przypadku poczatkowa wartosc (ale jak by byl counter to mialob by wieksze znaczenie)\n-        return {\n+        return {                /// zwracamuy obiekt\n             ...prevInput\n             [input]:value\n         }\n     })\n"
+                },
+                {
+                    "date": 1691317721985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n jak tego uzyc w inputChangeHandler?\n const inputChangeHandler = (input, value) =>{\n     setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli w tym przypadku poczatkowa wartosc (ale jak by byl counter to mialob by wieksze znaczenie)\n         return {                /// zwracamuy obiekt\n-            ...prevInput\n+            ...prevInput        /// kopiujemy stan poprzedni dzieki spread operator   to nam robi dokladnie kopie prevInput\n             [input]:value\n         }\n     })\n }\n"
+                },
+                {
+                    "date": 1691317745849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n const inputChangeHandler = (input, value) =>{\n     setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli w tym przypadku poczatkowa wartosc (ale jak by byl counter to mialob by wieksze znaczenie)\n         return {                /// zwracamuy obiekt\n             ...prevInput        /// kopiujemy stan poprzedni dzieki spread operator   to nam robi dokladnie kopie prevInput\n-            [input]:value\n+            [input]:value       /// jako ze mamy kilka inputow to chcemy \n         }\n     })\n }\n \n"
+                },
+                {
+                    "date": 1691317797162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n const inputChangeHandler = (input, value) =>{\n     setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli w tym przypadku poczatkowa wartosc (ale jak by byl counter to mialob by wieksze znaczenie)\n         return {                /// zwracamuy obiekt\n             ...prevInput        /// kopiujemy stan poprzedni dzieki spread operator   to nam robi dokladnie kopie prevInput\n-            [input]:value       /// jako ze mamy kilka inputow to chcemy \n+            [input]:value       /// jako ze mamy kilka inputow to chcemy w dynamiczny sposob uzyskac dostep do nazwy inputa i ustawic mu value jakie jest w inpucie \n         }\n     })\n }\n \n"
+                },
+                {
+                    "date": 1691317875356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,8 +58,9 @@\n     setUserInput( (prevInput) =>{   /// chcemy tu przekazac prev value czyli w tym przypadku poczatkowa wartosc (ale jak by byl counter to mialob by wieksze znaczenie)\n         return {                /// zwracamuy obiekt\n             ...prevInput        /// kopiujemy stan poprzedni dzieki spread operator   to nam robi dokladnie kopie prevInput\n             [input]:value       /// jako ze mamy kilka inputow to chcemy w dynamiczny sposob uzyskac dostep do nazwy inputa i ustawic mu value jakie jest w inpucie \n+                                    wiec tu w [inut] zostanie podstawione to co jest w aktualnym inpucie czyli odpowiednie id i do niego bedzie przypisana value\n         }\n     })\n }\n \n"
+                },
+                {
+                    "date": 1691317988709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n })\n \n dlaczego ta ostatnia duration jest bez cudzyslowiow? moze byc tez z i zadziala, chodzi o to ze jak mamy w id nazwe dwu-czlonowa to musimy w tym obiekcie dac w cudzyslowiu\n \n-powinnismy przeniesc nasze stworzone wartosci do zewnetrznej zmiennej nad componentem zeby nie kopiowac danych tylko poslugiwac sie zmienna\n+powinnismy przeniesc nasze stworzone wartosci do zewnetrznej zmiennej nad componentem zeby nie kopiowac danych tylko poslugiwac sie zmienna  czyli w useState(nazwazmiennej zawierajacej wartosci poczatkowe)\n \n \n jak tego uzyc w inputChangeHandler?\n const inputChangeHandler = (input, value) =>{\n"
+                },
+                {
+                    "date": 1691318075003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,4 +64,6 @@\n     })\n }\n \n \n+jak np mamy input jakis tam to musimy w nim dodac \n+value ={userInput[\"jego-id\"]}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1691318086472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,5 +65,5 @@\n }\n \n \n jak np mamy input jakis tam to musimy w nim dodac \n-value ={userInput[\"jego-id\"]}\n\\ No newline at end of file\n+value ={userInput[\"jego-id\"]}  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1691318103899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,5 +65,6 @@\n }\n \n \n jak np mamy input jakis tam to musimy w nim dodac \n-value ={userInput[\"jego-id\"]}  \n\\ No newline at end of file\n+value ={userInput[\"jego-id\"]}  \n+i tak dla kazdego inputu\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1691318145559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,6 +65,6 @@\n }\n \n \n jak np mamy input jakis tam to musimy w nim dodac \n-value ={userInput[\"jego-id\"]}  \n+value ={userInput[\"jego-id\"]}    /// userInput to nazwa zmiennej w useStete ktory stworzylismy\n i tak dla kazdego inputu\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1691316083667,
+            "name": "Commit-0",
+            "content": "1. pierwszy commit\n    podziel aplikacje na komponenty, min 3\n\n\n2. drugi commit\n    handling \n        a) submit button ( klikniecie ma drukowac w konsoli \"submit)\n        b) reset button    (klikniecie ma drukowac w konsoli \"reset\")\n        c) inputs (jedna funkcja dla wielu inputow) (wpisanie cokolwikek w jakikolwiek input ma drukowac w konsoli nazwe inputa i aktualna wartosc)\n\n\n\n\n\n///// wskazowki /////\n    przycisk calculate traktujemy jako submit, \n\n    jako ze button submit ma type=\"submit\" i jest w form, to nie dajemy na niego onclicka, tylko w zanczniku form dajemy onSubmit i tam przekazujemy funkcje\n    jesli przyciski nam przelasowuje strone to mousimy cos z tym zrobic\n\n    jak tworzymy handler dla inpotow to musimy wiedziec co klikamy i jaka jest wartosc tego input (zeby wiedziec jaka jest wartosc danego inputa to nie wymyslamy na sile tylko najlepije jak kazdy input ma jakies iniukatowe id i to nim musimy sie posluzyc), jesli do onChange chcemy przekazac funkcje ktora ma jakies argimenty\n    to nie mozemy dac costam(a,b) bo nam ta funkcje odrazu wywola, lepiej arrow function ()=>{ i dopiero tu costam(a,b)} i jak klikniemy w input to on chamge wywola funkcje\n    strzalkowa a ona costam(a,b), bo jak by byla tylko w onChange funkcja costam(a,b) to nawiasy () sprawiaja ze funkcja od razu sie wykona, w funkcji strzalkowej () nie sprawiaja ze sie wykona bo to czesc skaldni funkcji \n\n    wszystkie 3 funkcje musza sie nazywac cos ala  \n    submitHandler\n    resetHandler\n    inputChangeHandler \n    \n\n    3 commmit\n\n    managing state\n    \n\n"
+        }
+    ]
+}
